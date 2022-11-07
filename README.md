@@ -1,95 +1,196 @@
-# Producción académica con Pandoc
+# Quipu White Paper
 
-Este proyecto propone la confección de escritos académicos o de complejidad
-considerable, sin la necesidad de interfaces gráficas. Promover el uso formatos
-no codificados o de alta legibilidad beneficia a todos los usuarios, que deben
-poder encontrar facilmente lo que necesitan, comprender lo que encuentran y
-usarlo para realizar tareas @das.
-
-El objetivo de este trabajo es un entorno de autoría de textos en el cual
-_Pandoc_ es la pieza central que actúa como interprete del sistema de
-composición tipográfica y preparación de documentos de alta calidad _LaTeX_,
-estándar de facto para la comunicación y publicación de documentos académicos
-[@macfarlane; @knuth1986texbook].
-
-Mediante integraciones sencillas se consigue una infraestructura robusta con
-funciones diseñadas para gestionar exposición de extensas biblografías,
-múltiples citas y referencias a diferentes fuentes, notación matemática,
-generación de gráficos y diagramas, entre otras capacidades avanzadas,
-necesarias en la producción de documentación técnica y científica, todo el
-proceso es controlado mediante linea de comandos sin depender de interfaces
-captivas, promoviendo la transparencia, claridad y reproducción
-[@gancarz2003linux p.88-97].
-
-## Interfaz de usuario textual
+## Introduction:
+ Token economics is the economic mechanism for incentivizing and aligning multi-sided platform participants in order to achieve an optimal outcome for all parties involved. At Quipu, participants are those whose products and/or services are transacted under informality, financial services providers, and Quipu itself.
  
-La principal característica de las herramientas y formatos involucrados en este
-proyecto es que están preparadas para interpretar instrucciones textuales. De
-los beneficios que trabajar de este modo habilita se destacan cuestiones de
-accesibilidad y la posibilidad de gestionar la exposición de conocimiento de la
-misma manera que se produce software [@hunt1999pragmatic; 
-@moolenaar2000].
 
-Separar contenido, referencias, estilos y procesos, en un contexto de
-organizaciones con actividades relacionadas a la publicación, donde la
-complejidad no solo reside en los documentos sino que también en la tarea que
-involucra a múltiples agentes (autores, correctores y editores, entre otros)
-devuelve el control de estilo a la organización. Garantiza unidad en estética
-en la composición gráfica resultante de productos diversos.
+Quipu Market is a community e-commerce for informal micro-businesses to build  creditworthiness with their unrecorded transaction information and alternative data.
 
-Esta formación introducirá en la fuerza de trabajo una nueva capacidad con una
-inclinación arraigada y fundamental hacia la investigación reproducible
-@Baumer_Udwin_2015. El lenguaje sigue siendo la mejor interfaz que se ha
-utilizado. Es sencillo, componible y ubicuo, está disponible en
-todos los sistemas. Es fácil de mantener, automatizar y ampliar @scale.
 
-## Pandoc
+By digitizing the offline, informal economies, we are able to record daily micro-transactions between people living in slums, which hold 25% of LatAm's urban population. Quipu uses spending patterns data to assess creditworthiness and unlock access to equitable financial services.
 
-_Pandoc_ es una biblioteca de _Haskell_  para convertir de un formato de
-marcado ligero a otro, y una herramienta de línea de comandos que accede a las
-funciones en esta biblioteca para convertir entre formatos y procesar textos
-@marlow2010haskell.
 
-El diseño de _Pandoc_ es modular, esta conformado por un conjunto de lectores,
-que analizan el texto en un formato determinado y producen una representación
-nativa del documento en un árbol de sintaxis abstracta (Abstract Syntax Tree -
-AST) y un conjunto de escritores, que convierten esta representación a un
-formato de destino [@ASTImpl2003; @Neamtiu05understandingsource].
+We create liquidity pools in USDc to allow anybody around the globe to become a lender for the micro-enterpreneurs in LatAm. They receive in exchange an interest-bearing token that gains value with interest as loans are being repaid. Quipu users can access loans when their credit score is good. Loans’ interest provides value to the liquidity pool, to Quipu for operation cost, and to the community itself in the form of a community token called Quipus. We distribute rewards in the form of  Quipu tokens which gains value as loans get repaid.  Quipu tokens can be used for transacting and investing back in the community through the liquidity pool. This brings new opportunities for people living in informality to generate revenue and help their community access capital for growing their business.
 
-## Markdown
 
-_Markdown_ es una sintaxis  de formato de texto plano.  El formato de texto es
-el marcado que se aplica a un texto simple para añadir datos de estilo más allá
-de la semántica de los elementos: colores, estilos, pesos tamaño, y
-características especiales (como hipervínculos).  Al texto resultante se le
-conoce como texto formateado, texto con estilos, o texto enriquecido @gruber.
+## Web3 Motivation:
+ 
 
-Lo que distingue a _Markdown_ de muchas otras sintaxis de marcado ligero, es su
-énfasis en la legibilidad.  El objetivo principal del diseño de la sintaxis de
-formato de _Markdown_ es hacerla lo más legible posible. La idea es que un
-documento con formato _Markdown_ sea publicable tal cual, como texto plano, sin
-que parezca que ha sido marcado con etiquetas o instrucciones de formato.
+Underwriting is the process of taking on financial risk for a fee. The goal is to draw conclusions and make decisions on risk based on data constraints. 
+Underwriting risk helps businesses scale using credit, and back-stops outlier risks with insurance. Today, most on-chain credit is over-collateralized; barring some high integrity markets.  
+Decentralized pools alone are not efficient underwriters and hence should be capital allocators only. 
+Typical underwriting mechanisms fail at creating centralized failure points due to the risk of centralized data ownership. 
 
-_Pandoc_ comprende una serie de extensiones útiles de la sintaxis de markdown,
-como los metadatos del documento (título, autor, fecha); las notas al pie; las
-tablas; las listas de definiciones; los superíndices y subíndices; la
-tachadura; las listas ordenadas mejoradas (el número de inicio y el estilo de
-numeración son significativos); las listas de ejemplos en ejecución; los
-bloques de código de software delimitados con resaltado de sintaxis; las
-comillas inteligentes, los guiones y las elipses; el _Markdown_ dentro de
-bloques HTML; y el _LaTeX_ en línea.
 
-# Metodotología 
+Wallets are the common denominator for tracking transactions on-chain, as can show historical liquidations, diversification, concentration levels, and labeled cases of fraud. This can provide estimates of risk evolution in proportion to the size and value of the wallet.
+ As DeFi activity grows, each wallet will have a mature profile of activity and behavior. 
 
-En este capitulo se describe el método propuesto y utilizado para producir el
-presente documento.
 
-Primero se describe la integración de diferentes piezas de software, algunas
-distribuidas junto con _Pandoc_ y otras aportes independientes de la comunidad.
-Seguido se presenta el filtro de diagramación y generación gráficos que permite
-crear visualizaciones utilizando texto y código. Luego se expone el sistema
-citas y referencias bibliográficas. Para concluir este capitulo se exponen
-cuestiones relacionadas a la notación matemática.
+We connect users to a real-world identity, and their data to replicate off-chain underwriting methods, generating credit scores and updating them on-chain, to be accessed by the liquidity pool’s smart contract.
+
+## Tokenomics:
+
+Initial coin offering:
+- 25% for today’s active users
+- 50% for owners  (quipu define) 
+- 5% for workers 
+- 20% for investors
+
+Quipu
+
+- Infinite token generation
+- An annual inflation rate of 10% (The annual inflation rate for the United States is 8.3% for the 12 months ended April 2022).
+  - Gain tokens for transacting
+   - More rewards for nearby transactions
+   - More rewards for sustainable transactions
+   - More rewards for good reputation on transactions
+
+qUSDc
+
+- Infinite token generation
+- For every USDc entering the pool, we generate a qUSDc 
+  - USDc are allocated to users with good credit scores asking for loans.
+- qUSDc value depends on pool’s liquidity, which increases with loans’ repayments due to interest.
+
+Value
+
+Quipu tokens
+
+Every time a loan is repaid, 10% of the interest rate is used to back the Quipu tokens. We propose steps to do so. First one (v1), air-dropping rewards in USDc to Quipu token holders (non-transferable), and afterward (V2) increasing the value of the token, which motivates users to hold them.  
+Moving from V1) to V2) will depend on DAO voting.
+
+V1: Non transferable tokens
+- Monthly we will air-dropped the collected USDc representing 10% of the interest rate to every Quipu token holder. Quipu token holders will have a week to claim their USDc, otherwise, they go back to the pool to be re-distributed next month. Thus, we ensure USDc is only distributed to active users. Quipu tokens are gained as rewards through the Quipu Market app.
+
+V2: Enable transferability, cash-out
+- The collected USDc tokens from the interest rate are added to the reserve, which backs the Quipu token, and gives value to it.
+- Yearly we increase a 10% the amount of Quipu tokens (inflation, increase distribution).
+
+Warning: when enabling transferability, cash-out, and buys, we enable speculation. 
+
+qUSDc
+- qUSDc is 1 USDc + interest_rate * time  
+Where interest_rate will vary with every borrower, depending on their credit score and amount of money being requested, terms, etc.
+
+Liquidity qUSDc:  
+Lenders can deposit USDc into the liquidity pool and they will receive an equivalent amount of qUSDc, which is an interest-bearing tokens. The USDc provides liquidity for borrowers, while the qUSDc earns based on the interest rate.
+It is importante to note that:
+
+**1) qUSDc =  USDc * lenders_rate* time.**
+
+**2) Interest_rate =  lenders_rate + quipu_fee + quipu_tokens**
+
+Note that interest_rate could vary depending on the creditworthiness of each borrower.
+Although lenders_rate is a fixed amount for borrowers, the earnings of the lenders will depend on the payment rate/default rate, since the earnings are split evenly amongst lenders. 
+
+  - Parameters: interest rate percentage to lender, Quipu fee, quipu tokens, minimum time exchange your qUSDc
+
+Future implementations will contain liquidity pools with risk ranges `, where interest rates are higher when the loan is riskier. 
+
+Liquidity Quipu:  
+A percentage of the interest rate in USDc is used to provide value for the Quipu tokens. That would be the quipu_tokens parameter in the interest_rate calculation. This incentivizes transactions in our app, which helps create data for improving our credit-score algorithm. It also motivates our users to hold Quipu tokens in their wallets, which is good for increasing demand.
+
+
+V1: The percentage is air-dropped to Quipu token holders
+V2: The percentage of the interest rate is used to create a reserve for the Quipu tokens. 
+
+
+## Interest rates
+
+Borrower’s Interest rates and repayment:  
+Interest rates depend on the borrower’s credit score and the amount of money requested, and it is set automatically by the Quipu AI credit score module. 
+- Lenders_rate needs to be higher than the inflation rate.
+
+Quipu provides a payment schedule. Although the user can pay at any time, and any amount, a penalization is applied if the payment is less than expected by each of the deadlines.
+- **Penalization:** penalization_rate * delayed_time * amount_delayed  
+Payment + penalization
+
+From each payment, a percentage is taken to cover interest_rate, which pays for lenders, quipu’s fee, and provides a reserve to the Quipu tokens.
+
+Lender’s interest rate:
+
+- Although the lenders_rate is fixed, the actual earn depends on the repayment for the whole pool. This amortizes default cases, by distributing the earns and default among all lenders.
+- Interests need to be higher than the inflation rate of COPs. 
+
+Users’ NFT financial ID and credit scores  
+An NFT is used to identify each user. We chose NFT to allow users change their wallet and still be able to link their own information.  All transactions, loans, and repayments are linked to their NFTs.
+
+Credit scores updates
+Our credit score is recorded on-chain but the credit score estimation algorithm runs off-chain. We update the users that recorded new transactions, information, or recently received a loan. This maintains an up-to-date credit score on the blockchain. The last updated credit score is publicly available, thus anybody can use it:
+- Our lending pool amortizes the default 
+- The last credit score is available, but not the algorithm nor the information used
+- Third parties interested in including additional information in our credit score can obtain a tailor-made credit score from us.
+
+After a loan is provided, the credit score is set to negative to avoid new loans being approved before calculating the newly updated credit score.
+
+Scheduled repayment, static interest rate, and penalizations:  
+The interest rate is static and provided to the borrower previous to requesting the loan.
+The user can pay at any time, any amount. Bad repayment amounts and/times impact negatively on the credit score.
+
+Governance /  DAO:
+
+Warnings:
+
+- If the goal is for governance power to be widely distributed, then transferability is counterproductive as concentrated interests are more likely to buy the governance rights from everyone else.
+- If the goal is for governance power to go to the competent, then transferability is counterproductive because nothing stops the governance rights from being bought up by the determined but incompetent.
+- We need mechanisms to not only increase the number of participants, the level of engagement, but the ability to solicit engagement from the right people.
+  - Quipu tokens are given as rewards to the users of our platform based on good behavior and engagement.
+
+Who can vote:  
+Quipu tokens holders can vote. For a lender to be able to vote, they will have to buy Quipu tokens. This increases the demand and value of our token.
+
+What can vote:
+
+Protocol parameters: 
+- interest rate:
+  - Percentage to lender, Quipu, and Quipu tokens
+- Minimum time to exchange your qCOP
+- Time to recover from health factor -1.
+- Credit score cut, how risky the loans can be  
+
+Funds usage:
+- Token distribution
+- Community work
+
+Attacks
+
+Bad behavior detection
+- Detection of token circles for incrementing credit scores
+- Mitigation: Freeze liquidity pool loans.
+
+Debt mitigation   
+We constantly adapt our credit score to exclude profiles prone to default. 
+Default loans burden is distributed among all loans, and paid loans help mitigate the loss.
+
+Future: Linking with UBI
+
+## Use cases 
+
+Credit flow: 
+
+Request loan:
+
+Add to the lending pool: 
+
+Monthly earns as a lender:
+
+Monthly payment as a borrower with punitory:
+
+Timeline
+
+Quipu token:
+
+Lending protocol: 
+
+Conclusions
+
+
+We are creating an uncollateralized lending protocol for the informal economy, allowing anybody around the world to lend and help micro-businesses in informality grow their businesses.  We provide a mechanism that intends to minimize the risk for lenders and also provides means for borrowers to invest in other micro-businesses in their community. A large challenge that currently is left off-chain is the calculation of the credit-score for each user in the informal economy. Our vision is that as web3 becomes more accessible to everybody around the globe, more information can be pulled on-chain and efficiently to build AI-web3 based credit-score algorithms and fully hold our protocol on-chain.
+
+
+
+
+
 
 ## Integración
 
