@@ -1,0 +1,61 @@
+# Proyect metadata
+institucion: QupuBank
+facultad: 'Facultad Regional Buenos Aires' 
+departamento: '' 
+carrera: ''
+director: ''
+programa: ''
+subtitle: ''
+title: 'Tokenomics'
+tutor: ''
+date:  'Noviembre, 2022'
+place: ''
+tags: ['tokenomics', 'quipu']
+author: ''
+abstract: "understanding the factors that will impact either supply or demand of QuipuBank cryptocurrencies."
+
+
+# Bibliografia y citas
+# Citeproc https://github.com/jgm/citeproc#how-to-use-it
+reference-section-title: 'Referencias'
+csl: ieee.csl
+# csl: iso690-author-date-es.csl
+# csl: apa-annotated-bibliography.csl
+bibliography: 
+  - bib/referencias.bib
+  - bib/SMS.bib
+#  - ep.bib  
+# nocite: |
+#   #@Guarino2020,@Kitchenham2011
+#   @*
+linkCitations: True
+
+# Configuraciones latex
+colorlinks: true
+lang: es
+header-includes: |
+# \usepackage{svg}
+# \usepackage{grffile}
+# \usepackage{import}
+
+include-after:
+# - extra/crossref.tex
+# - extra/md-pandoc.tex
+#\import{./}{extra/md-pandoc.tex}
+#\import{./}{extra/crossref.tex}
+
+
+# Crossref opts
+codeBlockCaptions: True
+autoSectionLabels: True
+figureTitle: |
+  Figure #
+lofTitle: |
+  ## List of Figures
+lotTitle: |
+  ## List of Tables
+tableTemplate: |
+  *$$tableTitle$$ $$i$$*$$titleDelim$$ $$t$$
+
+# citation-abbreviations: jabbrev.json
+# # https://github.com/seananderson/csl-abbrev
