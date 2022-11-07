@@ -60,7 +60,7 @@ jobs:
       ##     #/usr/share/miniconda/bin/pandoc-plot -h
           
       - run: mkdir -p output
-      - run: cat article/*.md > README-lite.md 
+      - run: cp README.md README-lite.md 
 
       #- name: List files 
       #  id: files_list
